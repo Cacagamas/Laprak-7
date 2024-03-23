@@ -1,0 +1,13 @@
+def hitung_frekuensi_kata(kalimat, kata):
+
+    kalimat = kalimat.lower().replace(".", "").replace(",", "").replace("?", "").replace("!", "").replace(";", "")
+    
+    frekuensi = sum(1 for k in kalimat.split() if k == kata.lower())
+    
+    return frekuensi
+
+kalimat = "Saya mau makan. Makan itu wajib. Mau siang atau malam saya wajib makan"
+kata_yang_dicari = "makan"
+
+frekuensi = hitung_frekuensi_kata(kalimat, kata_yang_dicari)
+print(f"Kata '{kata_yang_dicari}' ada {frekuensi} buah dalam kalimat.")
