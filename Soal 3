@@ -1,0 +1,24 @@
+def hapus_spasi_berlebih(kalimat):
+    
+    kalimat_hasil = ''
+    
+    spasi_sebelumnya = False
+    
+    for char in kalimat:
+      
+        if char == ' ':
+          
+            if not spasi_sebelumnya:
+                kalimat_hasil += char
+                spasi_sebelumnya = True
+      
+        else:
+           
+            kalimat_hasil += char
+            spasi_sebelumnya = False
+    
+    return kalimat_hasil
+
+kalimat = "saya    tidak   suka   memancing  ikan      "
+kalimat_hasil = hapus_spasi_berlebih(kalimat)
+print("Output:", kalimat_hasil)
